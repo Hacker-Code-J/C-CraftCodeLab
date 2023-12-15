@@ -1,16 +1,82 @@
-.linked-list {
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 20px;
     display: flex;
-    flex-direction: row;
     align-items: center;
+    justify-content: center;
+    min-height: 100vh;
 }
 
-.node {
-    width: 60px;
-    height: 40px;
-    background-color: #3498db;
-    color: white;
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+canvas {
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.controls {
     text-align: center;
-    line-height: 40px;
-    border-radius: 5px;
+}
+
+input[type="number"] {
+    padding: 10px;
     margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input[type="number"]:focus {
+    border-color: #4CAF50;
+}
+
+button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.control-group {
+    display: flex;
+    gap: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    canvas {
+        margin-bottom: 40px;
+    }
 }

@@ -1,11 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Linked List Visualization</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Linked List</title>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <canvas id="canvas" width="600" height="400"></canvas>
+    <div class="container">
+        <canvas id="checkerboard" width="640" height="640"></canvas>
+        <div class="controls">
+            <div class="control-group">
+                <input type="number" id="nodeValue" placeholder="Enter Node Value">
+            </div>
+            <div class="control-group">
+                <button onclick="createNode()">Create Node</button>
+                <button onclick="resetList()">Reset List</button>
+            </div>
+        
+            <!-- Node Insertion -->
+            <div class="control-group">
+                <button onclick="insertNodeAtStart()">Insert at Start</button>
+                <button onclick="insertNodeAtEnd()">Insert at End</button>
+                <button onclick="deleteNode()">Delete Node</button>
+            </div>
+        </div>        
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
