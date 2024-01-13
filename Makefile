@@ -1,15 +1,28 @@
-SUBDIRS = src/random_numbers
+CC=gcc
+CFLAGS=-pthread -Wall
+TARGET=cpu_simulation
 
-.PHONY: all clean $(SUBDIRS)
+all: $(TARGET)
 
-all: $(SUBDIRS)
+$(TARGET): $(TARGET).c
+	$(CC) $(CFLAGS) -o $(TARGET) $(TARGET).c
 
-$(SUBDIRS):
-	$(MAKE) -C $@ 
+clean:
+	rm -f $(TARGET)
 
-clean: 
-	for dir in $(SUBDIRS); do \
-		$(MAKE) -C $$dir clean; \
-	done
 
-rebuild: clean all
+# SUBDIRS = src/random_numbers
+
+# .PHONY: all clean $(SUBDIRS)
+
+# all: $(SUBDIRS)
+
+# $(SUBDIRS):
+# 	$(MAKE) -C $@ 
+
+# clean: 
+# 	for dir in $(SUBDIRS); do \
+# 		$(MAKE) -C $$dir clean; \
+# 	done
+
+# rebuild: clean all
